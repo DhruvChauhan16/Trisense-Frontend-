@@ -1,16 +1,83 @@
-# React + Vite
+ # TriSense — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TriSense is a multimodal emotion detection and music recommendation app. This repository contains the **frontend only** — the user interface that captures input, displays detected emotions, and presents music recommendations in real time.
 
-Currently, two official plugins are available:
+> Note: The emotion-detection model, training pipeline, and backend integration were built by teammates. This repo covers the React/Vite frontend that I designed and developed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## What this frontend does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Provides a responsive, user-friendly interface for the TriSense experience
+- Sends user input data to the backend via REST API calls (fetch/axios) for emotion detection
+- Displays the detected emotion and corresponding music recommendations in real time
+- Handles UI state for loading, success, and error responses from the API
+- Built with a mobile-first, animation-driven design for smooth, engaging interactions
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **React** — component-based UI
+- **Vite** — build tool and dev server
+- **Tailwind CSS** — styling and responsive layout
+
+---
+
+## Project Structure
+
+```
+├── public/          # Static assets
+├── src/             # React components, pages, styles, API calls
+├── index.html        # App entry point
+├── vite.config.js    # Vite configuration
+├── package.json      # Dependencies and scripts
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/DhruvChauhan16/Trisense-Frontend-.git
+cd Trisense-Frontend-
+npm install
+```
+
+### Running locally
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` (default Vite port).
+
+### Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## API Integration
+
+This frontend expects a backend API endpoint that accepts user input (e.g., image/audio/text depending on the modality) and returns the detected emotion along with recommended tracks. API base URL and endpoint configuration can be set in the relevant config/`.env` file used in `src/`.
+
+> If you're reviewing this project: the model training, multimodal data processing, and backend logic live in a separate repository maintained by my teammates. This repo is scoped to the frontend implementation.
+
+---
+
+## My Contribution
+
+- Designed and built the complete UI/UX for the TriSense application
+- Implemented responsive layouts using Tailwind CSS
+- Built reusable React components for input capture, emotion display, and music recommendation results
+- Integrated frontend with backend REST APIs for real-time data exchange
+- Handled UI states (loading, error, success) for a smooth user experience during API calls
